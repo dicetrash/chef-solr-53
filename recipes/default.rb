@@ -24,5 +24,5 @@ end
 
 execute "solr_instal" do
   cwd "/tmp"
-  command "./install_solr_service.sh solr.tar.gz"
+  command "./install_solr_service.sh solr.tgz"
 end
