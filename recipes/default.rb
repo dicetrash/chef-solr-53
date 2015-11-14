@@ -18,4 +18,12 @@ unless Dir.exist?("/opt/solr")
 		cwd "/tmp"
 		command "./install_solr_service.sh solr-#{node['solr']['version']}.tgz"
 	end
+	
+	file "/tmp/install_solr_service.sh" do
+		action :delete
+	end
+	
+	file "/tmp/solr-#{node['solr']['version']}.tgz" do
+		action :delete
+	end
 end
