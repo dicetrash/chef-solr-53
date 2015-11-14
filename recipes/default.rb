@@ -19,10 +19,10 @@ end
 
 execute "solr_untar" do
   cwd "/tmp"
-  command "tar xzf solr-5.3.1.tgz solr-5.3.1/bin/install_solr_service.sh --strip-components=2"
+  command "tar xzf solr.tar.gz solr-5.3.1/bin/install_solr_service.sh --strip-components=2"
 end
 
 execute "solr_instal" do
   cwd "/tmp"
-  command "./install_solr_service.sh solr-5.3.1.tgz"
+  command "./install_solr_service.sh solr.tar.gz"
 end
