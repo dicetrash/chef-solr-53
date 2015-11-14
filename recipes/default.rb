@@ -5,25 +5,25 @@
 # Free and open source
 #
 unless Dir.exist?("/opt/solr")
-	remote_file "/tmp/solr-#{node['solr']['version']}.tgz" do
+	remote_file Chef::Config[:file_cache_path] + "/solr-#{node['solr']['version']}.tgz" do
 		source "http://apache.mirrors.tds.net/lucene/solr/#{node['solr']['version']}/solr-#{node['solr']['version']}.tgz"
 	end
 	
 	execute "solr_untar" do
-		cwd "/tmp"
+		cwd Chef::Config[:file_cache_path]
 		command "tar xzf solr-#{node['solr']['version']}.tgz solr-#{node['solr']['version']}/bin/install_solr_service.sh --strip-components=2"
 	end
 	
 	execute "solr_instal" do
-		cwd "/tmp"
+		cwd Chef::Config[:file_cache_path]
 		command "./install_solr_service.sh solr-#{node['solr']['version']}.tgz"
 	end
 	
-	file "/tmp/install_solr_service.sh" do
+	file Chef::Config[:file_cache_path] + "/install_solr_service.sh" do
 		action :delete
 	end
 	
-	file "/tmp/solr-#{node['solr']['version']}.tgz" do
+	file Chef::Config[:file_cache_path] + "/solr-#{node['solr']['version']}.tgz" do
 		action :delete
 	end
 end
