@@ -6,7 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
-remote_file "/tmp/solr.tar.gz" do
+remote_file "/tmp/solr.tgz" do
   source "http://apache.mirrors.tds.net/lucene/solr/5.3.1/solr-5.3.1.tgz"
 end
 
@@ -19,7 +19,7 @@ end
 
 execute "solr_untar" do
   cwd "/tmp"
-  command "tar xzf solr.tar.gz solr-5.3.1/bin/install_solr_service.sh --strip-components=2"
+  command "tar xzf solr.tgz solr-5.3.1/bin/install_solr_service.sh --strip-components=2"
 end
 
 execute "solr_instal" do
