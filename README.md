@@ -1,23 +1,15 @@
 chef-solr-53 Cookbook
 =====================
-TODO: Enter the cookbook description here.
-
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Installs solr versions greater then 5.2
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
-
-e.g.
 #### packages
-- `toaster` - chef-solr-53 needs toaster to brown your bagel.
+- `java` - chef-solr-53 needs java to run solr
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
 
-e.g.
 #### chef-solr-53::default
 <table>
   <tr>
@@ -27,19 +19,17 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['chef-solr-53']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['solr']['version']</tt></td>
+    <td>String</td>
+    <td>Solr version to install</td>
+    <td><tt>"5.3.1"</tt></td>
   </tr>
 </table>
 
 Usage
 -----
 #### chef-solr-53::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
 Just include `chef-solr-53` in your node's `run_list`:
 
 ```json
@@ -53,7 +43,7 @@ Just include `chef-solr-53` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
+Github https://github.com/dicetrash/chef-solr-53
 
 e.g.
 1. Fork the repository on Github
@@ -62,7 +52,3 @@ e.g.
 4. Write tests for your change (if applicable)
 5. Run the tests, ensuring they all pass
 6. Submit a Pull Request using Github
-
-License and Authors
--------------------
-Authors: TODO: List authors
