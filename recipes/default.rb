@@ -4,7 +4,7 @@
 #
 # Free and open source
 #
-unless Dir.exist? "/opt/solr" do 
+unless Dir.exist?("/opt/solr")
 	remote_file "/tmp/solr-#{node['solr']['version']}.tgz" do
 		source "http://apache.mirrors.tds.net/lucene/solr/#{node['solr']['version']}/solr-#{node['solr']['version']}.tgz"
 	end
